@@ -1,21 +1,26 @@
 #Tue Aug 27 04:13:14 UTC 2024
 micronaut:
   application:
-    name: hostels
+    name: users
 
 jpa:
   default:
+    properties:
+      hibernate:
+        physical_naming_strategy: 'org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl'
+        hbm2ddl:
+          auto: validate
+        show_sql: false
     entity-scan:
       packages:
         - com.hostels.beans
 
-
 datasources:
   default:
-    url: jdbc:mysql://capsule.cxrdfvklio6j.us-east-1.rds.amazonaws.com:3306/capsule
+    url: ${DB_ENDPOINT}
     driver-class-name: "com.mysql.cj.jdbc.Driver"
-    username: "admin"
-    password: "admin123#"
+    username: ${DB_USER}
+    password: ${DB_PASS}
     maximum-pool-size: 10
     allow-pool-suspension: true
     dialect: MYSQL

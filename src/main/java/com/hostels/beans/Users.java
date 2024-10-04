@@ -1,5 +1,6 @@
 package com.hostels.beans;
 
+import io.micronaut.configuration.hibernate.jpa.proxy.GenerateProxy;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,6 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@GenerateProxy
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -12,7 +12,9 @@ import jakarta.inject.Inject;
 import java.io.IOException;
 import java.util.Map;
 
-public class FunctionRequestHandler extends MicronautRequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
+public class FunctionRequestHandler extends MicronautRequestHandler
+    <APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent>
+{
     @Inject
     JsonMapper objectMapper;
     @Inject
