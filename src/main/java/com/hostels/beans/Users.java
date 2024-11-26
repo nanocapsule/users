@@ -17,9 +17,15 @@ import lombok.NoArgsConstructor;
 @Data
 @GenerateProxy
 public class Users {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     private String username;
     private String email;
+
+    public String toString() {
+        return "Users(userId=" + this.getUserId() + ", username=" + this.getUsername() + ", email=" + this.getEmail() + ")";
+    }
+
 }
